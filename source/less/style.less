@@ -1,10 +1,16 @@
 // TURN THIS OFF TO REMOVE BORDERS
 * {
-    border: 1px solid black !important;
+    border: 1px dotted black !important;
 }
 // Variables
 @headerHeight: 10%;
 @mainHeight: 100%-@headerHeight;
+@insetPadding: 1%;
+// These heights need to add up to 100%
+@tabsHeight: 10%;
+@chatboxHeight: 70%;
+@bottomBarHeight: 5%;
+@inputHeight: 15%;
 
 // Normalizers
 * {
@@ -22,31 +28,44 @@ table {
 a {
     color: #00B7FF;
 }
-
 html {
-    overflow-y: hidden;
     height: 100%;
 }
 body {
     height: 100%;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 .header {
     height: @headerHeight;
+    padding: 1em;
     width: 100%;
-}
-.main {
-    height: @mainHeight;
-    width: 80%;
-    float: left;
-    display: inline-block;
 }
 .side {
     height: @mainHeight;
+    padding: @insetPadding;
     width: 20%;
     float: right;
     display: inline-block;
 }
+.main {
+    height: @mainHeight;
+    padding: @insetPadding;
+    width: 80%;
+    float: left;
+    display: inline-block;
+}
+.main > div {
+    padding: @insetPadding;
+}
 .tabs {
-
+    height: @tabsHeight;
+}
+.chatbox {
+    height: @chatboxHeight;
+}
+.bottom-bar {
+    height: @bottomBarHeight;
+}
+.input {
+    height: @inputHeight;
 }
