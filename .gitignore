@@ -1,0 +1,10 @@
+# Directories
+build/
+trash/
+logs/
+node_modules/
+
+# Files
+npm-debug.log
+.nodemonignore
+sftp-config.json
