@@ -1,3 +1,11 @@
+// TURN THIS OFF TO REMOVE BORDERS
+* {
+    border: 1px solid black !important;
+}
+// Variables
+@headerHeight: 10%;
+@mainHeight: 100%-@headerHeight;
+
 // Normalizers
 * {
     margin: 0;
@@ -15,8 +23,30 @@ a {
     color: #00B7FF;
 }
 
-
+html {
+    overflow-y: hidden;
+    height: 100%;
+}
 body {
+    height: 100%;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+.header {
+    height: @headerHeight;
+    width: 100%;
+}
+.main {
+    height: @mainHeight;
+    width: 80%;
+    float: left;
+    display: inline-block;
+}
+.side {
+    height: @mainHeight;
+    width: 20%;
+    float: right;
+    display: inline-block;
+}
+.tabs {
 
+}
