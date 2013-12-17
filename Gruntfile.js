@@ -50,19 +50,6 @@ module.exports = function () {
                     src: 'views/**',
                     dest: 'build/'
                 }]
-            },
-            privates: {
-                files: [{
-                    expand: true,
-                    flatten: true,
-                    src: 'source/private/*.js',
-                    dest: 'build/routes/'
-                }, {
-                    expand: true,
-                    cwd: 'source/private/views',
-                    src: '**/*.jade',
-                    dest: 'build/views/'
-                }],
             }
         },
         // Render Less to  CSS
@@ -89,23 +76,19 @@ module.exports = function () {
             },
             server: {
                 files: ['source/*.js'],
-                tasks: ['copy:server', 'jshint']
+                tasks: ['copy:server']
             },
             js: {
                 files: ['source/js/*.js'],
-                tasks: ['copy:js', 'concat:require', 'jshint']
+                tasks: ['copy:js']
             },
             views: {
                 files: ['source/views/**', 'source/views/**/**'],
                 tasks: ['copy:views']
             },
-            privates: {
-                files: ['source/private/*.js', 'source/private/views/**', 'source/private/views/**/**'],
-                tasks: ['copy:privates']
-            },
             less: {
                 files: ['source/less/*.less'],
-                tasks: ['less:development']
+                tasks: ['less']
             }
         },
         // Auto restart the server if conditions meet
@@ -114,7 +97,6 @@ module.exports = function () {
                 options: {
                     cwd: __dirname,
                     file: 'build/server.js',
-                    // Sets the environment for node to development(configuration purposes)
                     env: {
                         'NODE_ENV': 'development'
                     },

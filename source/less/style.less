@@ -3,9 +3,10 @@
     border: 1px dotted black !important;
 }
 // Variables
+@fontSize: 16px;
 @headerHeight: 10%;
 @mainHeight: 100%-@headerHeight;
-@insetPadding: 1%;
+@insetPadding: 0.5em;
 // These heights need to add up to 100%
 @tabsHeight: 10%;
 @chatboxHeight: 70%;
@@ -33,7 +34,16 @@ html {
 }
 body {
     height: 100%;
-    font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: @fontSize "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1 {
+    font-size: 175%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 125%;
 }
 .header {
     height: @headerHeight;
@@ -68,4 +78,11 @@ body {
 }
 .input {
     height: @inputHeight;
+}
+
+
+@media (max-width:768px) {
+    body {
+        font-size: 80%;
+    }
 }
