@@ -4,14 +4,16 @@
 }
 // Variables
 @fontSize: 16px;
-@headerHeight: 10%;
-@mainHeight: 100%-@headerHeight;
+@headerHeight: 75px;
+@sideWidth: 150px;
+@mainHeight: ~'calc(100% - @{headerHeight})';
+@mainWidth: ~'calc(100% - @{sideWidth})';
 @insetPadding: 0.5em;
 // These heights need to add up to 100%
-@tabsHeight: 10%;
-@chatboxHeight: 70%;
-@bottomBarHeight: 5%;
-@inputHeight: 15%;
+@tabsHeight: 50px;
+@bottomBarHeight: 50px;
+@inputHeight: 75px;
+@chatboxHeight: ~'calc(100% - @{tabsHeight} - @{bottomBarHeight} - @{inputHeight})';
 
 // Normalizers
 * {
@@ -52,15 +54,15 @@ h3 {
 }
 .side {
     height: @mainHeight;
+    width: @sideWidth;
     padding: @insetPadding;
-    width: 20%;
-    float: right;
+    float: left;
     display: inline-block;
 }
 .main {
     height: @mainHeight;
+    width: @mainWidth;
     padding: @insetPadding;
-    width: 80%;
     float: left;
     display: inline-block;
 }
@@ -72,6 +74,7 @@ h3 {
 }
 .chatbox {
     height: @chatboxHeight;
+    overflow-y: scroll;
 }
 .bottom-bar {
     height: @bottomBarHeight;
@@ -80,9 +83,8 @@ h3 {
     height: @inputHeight;
 }
 
-
 @media (max-width:768px) {
     body {
-        font-size: 80%;
+        font-size: 90%;
     }
 }
